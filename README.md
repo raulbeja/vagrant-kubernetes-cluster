@@ -54,7 +54,7 @@ Create shell script used by workers to join the cluster.
 
 ### worker.sh
 ```shell
-Run joincluster.sh created by master.sh to join worker to the cluster
+Run joincluster.sh created by master.sh to join workers nodes to the cluster
 
 ```
 
