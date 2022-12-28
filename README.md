@@ -3,8 +3,10 @@
 ## Prerequisites
 
 1. Vagrant Installed
-2. At least 4 cpus and 4Gb RAM workstation.
-
+[![Vagrant](https://img.shields.io/static/v1?message=Vagrant&logo=vagrant&labelColor=5c5c5c&color=1182c3&logoColor=white&label=%20&style=plastic)](https://developer.hashicorp.com/vagrant/downloads)
+2. Virtualbox provider
+[![VirtualBox](https://img.shields.io/static/v1?message=Virtualbox&logo=virtualbox&labelColor=5c5c5c&color=1182c3&logoColor=white&label=%20&style=plastic)](https://www.virtualbox.org/wiki/Downloads)
+3. At least 4 cpus and 4Gb RAM workstation.
 
 ## Usage/Examples
 
@@ -13,11 +15,12 @@ To provision the cluster, execute the following commands.
 ```shell
 git clone https://github.com/raulbeja/vagrant-kubernetes-cluster.git
 cd vagrant-kubernetes-cluster
-vagrant up
+vagrant up --provider=virtualbox
 ```
 
-## Vagrantfile
+## Automation Files ...
 
+### Vagrantfile
 ```shell
 Use nodes to map your cluster nodes configuration
 nodes = [
@@ -37,48 +40,46 @@ Enabled hostmanager plugin to get hosts files updated.
 
 ```
 
-## bootstrap.sh
+### bootstrap.sh
 ```shell
-Install docker community editio as container runtime and kubernetes tools in cluster nodes.
+Install docker community edition as container runtime and kubernetes tools in cluster nodes.
 
 ```
-
-
-
-## master.sh
+### master.sh
 ```shell
 Install kubernetes components in master node.
 Create shell script used by workers to join the cluster.
 
 ```
 
-## worker.sh
+### worker.sh
 ```shell
 Run joincluster.sh created by master.sh to join worker to the cluster
 
 ```
 
-## To connect to cluster machine, 
+## Basic Operations ...
 
+### To connect to a cluster machine, 
 ```shell
 vagrant ssh node[:hostname]
+
 ```
 
-
-## To shutdown the cluster, 
-
+### To shutdown the cluster, 
 ```shell
 vagrant halt
+
 ```
 
-## To restart the cluster,
-
+### To restart the cluster,
 ```shell
 vagrant up
+
 ```
 
-## To destroy the cluster, 
-
+### To destroy the cluster, 
 ```shell
 vagrant destroy -f
+
 ```
